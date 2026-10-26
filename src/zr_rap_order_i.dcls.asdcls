@@ -1,0 +1,27 @@
+@EndUserText.label: 'Sales Order Interface Authorization'
+@MappingRole: true
+
+define role ZR_RAP_Order_I
+{
+  grant select on ZI_RAP_Order
+    where
+      (
+        SalesOrganization,
+        DistributionChannel,
+        Division
+      ) =
+        aspect pfcg_auth(
+          V_VBAK_VKO,
+          VKORG,
+          VTWEG,
+          SPART,
+          ACTVT = '03'
+        )
+
+      and ( SalesOrderType ) =
+        aspect pfcg_auth(
+          V_VBAK_AAT,
+          AUART,
+          ACTVT = '03'
+        );
+}

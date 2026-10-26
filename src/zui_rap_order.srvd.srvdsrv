@@ -1,0 +1,4 @@
+@EndUserText.label: 'Sales Order Service'
+define service ZUI_RAP_ORDER {
+  expose ZC_RAP_Order as SalesOrders;
+}

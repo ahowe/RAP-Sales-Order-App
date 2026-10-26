@@ -1,0 +1,8 @@
+@EndUserText.label: 'Sales Order Projection Authorization'
+@MappingRole: true
+
+define role ZR_RAP_Order_C
+{
+  grant select on ZC_RAP_Order
+    where inheriting conditions from entity ZI_RAP_Order;
+}

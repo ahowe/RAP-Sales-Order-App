@@ -1,0 +1,7 @@
+projection;
+strict;
+
+define behavior for ZC_RAP_Order alias SalesOrder
+{
+  use update;
+}

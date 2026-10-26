@@ -1,0 +1,126 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: {
+  typeName: 'Sales Order',
+  typeNamePlural: 'Sales Orders',
+
+  title: {
+    type: #STANDARD,
+    value: 'SalesOrder'
+  },
+
+  description: {
+    type: #STANDARD,
+    value: 'CustomerReference'
+  }
+}
+
+annotate entity ZC_RAP_Order with
+{
+  @UI.facet: [
+    {
+      id: 'OrderDetails',
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Order Details',
+      position: 10
+    }
+  ]
+
+  @UI.lineItem: [
+    {
+      position: 10,
+      importance: #HIGH,
+      label: 'Sales Order'
+    }
+  ]
+  @UI.identification: [
+    {
+      position: 10,
+      label: 'Sales Order'
+    }
+  ]
+  @UI.selectionField: [
+    { position: 10 }
+  ]
+  SalesOrder;
+
+  @UI.lineItem: [
+    {
+      position: 20,
+      importance: #HIGH,
+      label: 'Customer Reference'
+    }
+  ]
+  @UI.identification: [
+    {
+      position: 20,
+      label: 'Customer Reference'
+    }
+  ]
+  CustomerReference;
+
+  @UI.lineItem: [
+    {
+      position: 30,
+      importance: #HIGH,
+      label: 'Sold-to Party'
+    }
+  ]
+  @UI.identification: [
+    {
+      position: 30,
+      label: 'Sold-to Party'
+    }
+  ]
+  @UI.selectionField: [
+    { position: 20 }
+  ]
+  SoldToParty;
+
+  @UI.lineItem: [
+    {
+      position: 40,
+      importance: #MEDIUM,
+      label: 'Order Date'
+    }
+  ]
+  @UI.identification: [
+    {
+      position: 40,
+      label: 'Order Date'
+    }
+  ]
+  SalesOrderDate;
+
+  @UI.identification: [
+    {
+      position: 50,
+      label: 'Order Type'
+    }
+  ]
+  SalesOrderType;
+
+  @UI.identification: [
+    {
+      position: 60,
+      label: 'Sales Organization'
+    }
+  ]
+  SalesOrganization;
+
+  @UI.identification: [
+    {
+      position: 70,
+      label: 'Distribution Channel'
+    }
+  ]
+  DistributionChannel;
+
+  @UI.identification: [
+    {
+      position: 80,
+      label: 'Division'
+    }
+  ]
+  Division;
+}

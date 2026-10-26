@@ -1,0 +1,18 @@
+unmanaged implementation in class zbp_i_rap_order unique;
+strict;
+
+define behavior for ZI_RAP_Order alias SalesOrder
+lock master
+authorization master ( instance )
+{
+  update;
+
+  field ( readonly )
+    SalesOrder,
+    SalesOrderType,
+    SalesOrganization,
+    DistributionChannel,
+    Division,
+    SoldToParty,
+    SalesOrderDate;
+}
